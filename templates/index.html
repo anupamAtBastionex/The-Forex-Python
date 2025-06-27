@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Button Click</title>
+    
+</head>
+<body>
+    <h1>Click the Button to Run Function</h1>
+    <button onclick="runFunction()">Run Function</button>
+
+
+
+    <script>
+        function runFunction() {
+            fetch('http://127.0.0.1:5000/run-function')
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message); // Show response message
+                });
+        }
+    </script>
+</body>
+</html>
